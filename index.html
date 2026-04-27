@@ -1,1 +1,172 @@
-github 。io
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>信息提交</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      padding: 36px 32px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      color: #222;
+    }
+    p.subtitle {
+      margin: 0 0 28px;
+      color: #666;
+      font-size: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+    .field { margin-bottom: 20px; }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d8d8d8;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: border-color .2s, box-shadow .2s;
+      font-family: inherit;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.18);
+    }
+    .file-drop {
+      position: relative;
+      border: 2px dashed #c9c9d6;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .file-drop:hover,
+    .file-drop.dragover {
+      border-color: #667eea;
+      background: #f5f7ff;
+    }
+    .file-drop input[type="file"] {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .file-name {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #444;
+      word-break: break-all;
+    }
+    button {
+      width: 100%;
+      padding: 13px 16px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .1s, box-shadow .2s;
+    }
+    button:hover {
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+    }
+    button:active { transform: translateY(1px); }
+    .hint {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <form
+    class="card"
+    action="https://formsubmit.co/your-email@example.com"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <h1>信息提交</h1>
+    <p class="subtitle">请填写姓名并上传附件</p>
+
+    <div class="field">
+      <label for="name">姓名</label>
+      <input type="text" id="name" name="name" placeholder="请输入您的姓名" required />
+    </div>
+
+    <div class="field">
+      <label for="file">附件</label>
+      <div class="file-drop" id="fileDrop">
+        <span id="fileLabel">点击或拖拽文件到此处上传</span>
+        <input type="file" id="file" name="attachment" required />
+        <div class="file-name" id="fileName"></div>
+      </div>
+    </div>
+
+    <button type="submit">提交</button>
+
+    <p class="hint">提交后将通过邮件接收您的信息</p>
+  </form>
+
+  <script>
+    const fileInput = document.getElementById('file');
+    const fileDrop = document.getElementById('fileDrop');
+    const fileName = document.getElementById('fileName');
+    const fileLabel = document.getElementById('fileLabel');
+
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files.length > 0) {
+        fileName.textContent = fileInput.files[0].name;
+        fileLabel.textContent = '文件已选择，点击可重新选择';
+      }
+    });
+
+    ['dragenter', 'dragover'].forEach(evt =>
+      fileDrop.addEventListener(evt, e => {
+        e.preventDefault();
+        fileDrop.classList.add('dragover');
+      })
+    );
+    ['dragleave', 'drop'].forEach(evt =>
+      fileDrop.addEventListener(evt, e => {
+        e.preventDefault();
+        fileDrop.classList.remove('dragover');
+      })
+    );
+  </script>
+</body>
+</html>
