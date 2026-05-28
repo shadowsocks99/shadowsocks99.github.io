@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>万隆 → 巴厘岛登巴萨｜15 天公共交通 + 渡轮攻略</title>
+<meta name="description" content="从印尼万隆出发，纯公共交通（火车 + 长途巴士 + 跨海渡轮）15 天慢游到巴厘岛登巴萨的完整攻略，含路线、票价、时刻、住宿与预算。">
+<style>
+  :root{
+    --bg:#0f1c2e;
+    --bg2:#13263d;
+    --card:#ffffff;
+    --ink:#1c2b3a;
+    --muted:#5b6b7b;
+    --line:#e3e9ef;
+    --accent:#0e7c66;
+    --accent2:#e9663b;
+    --gold:#d9a441;
+    --sea:#1c6fb0;
+    --shadow:0 10px 30px rgba(15,28,46,.12);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    color:var(--ink);
+    background:#f4f6f9;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--sea);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 55%,#0c3a3a 100%);
+    color:#fff;
+    padding:64px 20px 88px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;left:0;right:0;bottom:-1px;height:60px;
+    background:#f4f6f9;
+    clip-path:polygon(0 60%,100% 0,100% 100%,0 100%);
+  }
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:2}
+  .kicker{
+    display:inline-block;letter-spacing:.18em;text-transform:uppercase;
+    font-size:12px;color:var(--gold);font-weight:700;margin-bottom:14px;
+  }
+  .hero h1{font-size:clamp(28px,5vw,46px);margin:0 0 12px;line-height:1.2;font-weight:800}
+  .hero p.lead{font-size:clamp(15px,2.4vw,19px);color:#cdd9e6;max-width:680px;margin:0 0 26px}
+  .route-pill{
+    display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700;font-size:14px;
+  }
+  .route-pill span{background:rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+  .route-pill .arrow{background:none;color:var(--gold);padding:0 2px}
+  .stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .stat{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+    border-radius:12px;padding:14px 18px;min-width:120px;
+  }
+  .stat b{display:block;font-size:24px;color:#fff}
+  .stat small{color:#a9bccd;font-size:12px;letter-spacing:.04em}
+
+  /* Layout */
+  .wrap{max-width:960px;margin:-30px auto 0;padding:0 20px 80px;position:relative;z-index:3}
+  section{margin:46px 0}
+  h2{font-size:26px;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+  h2 .em{font-size:24px}
+  .sec-sub{color:var(--muted);margin:0 0 22px;font-size:15px}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:22px 24px;
+  }
+
+  /* Toc */
+  .toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .toc a{
+    display:block;background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:10px 12px;font-size:14px;font-weight:600;color:var(--ink);transition:.15s;
+  }
+  .toc a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;transform:translateY(-2px)}
+  .toc a small{display:block;color:var(--muted);font-weight:500;font-size:12px}
+
+  /* Timeline */
+  .timeline{position:relative;margin-left:8px}
+  .day{
+    position:relative;padding:0 0 6px 38px;margin-bottom:18px;
+  }
+  .timeline::before{
+    content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--accent),var(--sea));
+  }
+  .day .dot{
+    position:absolute;left:0;top:2px;width:24px;height:24px;border-radius:50%;
+    background:var(--accent);color:#fff;font-size:12px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px #f4f6f9;
+  }
+  .day.ferry .dot{background:var(--sea)}
+  .day.rest .dot{background:var(--gold)}
+  .day .daycard{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);
+  }
+  .day h3{margin:0 0 4px;font-size:18px}
+  .day .where{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.03em}
+  .day.ferry .where{color:var(--sea)}
+  .day ul{margin:10px 0 0;padding-left:18px}
+  .day li{margin:3px 0;font-size:14.5px}
+  .leg{
+    display:inline-flex;align-items:center;gap:6px;background:#eef6f3;color:var(--accent);
+    border-radius:8px;padding:3px 9px;font-size:12.5px;font-weight:700;margin:8px 8px 0 0;
+  }
+  .leg.ferry{background:#e7f1f9;color:var(--sea)}
+  .leg.bus{background:#fbeee8;color:var(--accent2)}
+
+  /* Tables */
+  .table-scroll{overflow-x:auto;border-radius:12px;border:1px solid var(--line)}
+  table{border-collapse:collapse;width:100%;background:#fff;font-size:14px;min-width:520px}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#f0f4f8;font-weight:700;color:var(--ink);white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tfoot td{font-weight:800;background:#f7faf9}
+
+  /* tips / callouts */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .note{
+    border-left:4px solid var(--accent);background:#f1f8f5;border-radius:0 12px 12px 0;
+    padding:14px 16px;font-size:14px;
+  }
+  .note.warn{border-color:var(--accent2);background:#fdf1ec}
+  .note.sea{border-color:var(--sea);background:#eef5fb}
+  .note h4{margin:0 0 6px;font-size:15px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chips span{background:#eef2f6;border-radius:999px;padding:4px 11px;font-size:12.5px;color:var(--muted)}
+
+  ul.clean{list-style:none;padding:0;margin:0}
+  ul.clean li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+  ul.clean li:last-child{border-bottom:none}
+  ul.clean b{color:var(--accent)}
+
+  footer{
+    text-align:center;color:var(--muted);font-size:13px;padding:30px 20px 50px;
+  }
+  .badge{display:inline-block;background:#eef2f6;border-radius:6px;padding:1px 7px;font-size:12px;color:var(--muted);font-weight:600}
+  @media(max-width:640px){
+    .grid2{grid-template-columns:1fr}
+    .hero{padding:48px 18px 80px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="kicker">Indonesia · 跨爪哇 + 巴厘海峡</span>
+    <h1>万隆 → 巴厘岛登巴萨<br>15 天纯公共交通 + 渡轮慢游攻略</h1>
+    <p class="lead">不坐飞机，只用火车、长途巴士与跨海渡轮，从西爪哇山城万隆一路向东，穿越爪哇腹地，跨过巴厘海峡，抵达登巴萨。这是一条把「赶路」变成「旅途」的经典陆海路线。</p>
+    <div class="route-pill">
+      <span>万隆 Bandung</span><span class="arrow">→</span>
+      <span>日惹 Yogyakarta</span><span class="arrow">→</span>
+      <span>泗水 Surabaya</span><span class="arrow">→</span>
+      <span>外南梦 Banyuwangi</span><span class="arrow">⛴</span>
+      <span>巴厘岛 Bali</span><span class="arrow">→</span>
+      <span>登巴萨 Denpasar</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>15</b><small>天 / DAYS</small></div>
+      <div class="stat"><b>~1,200 km</b><small>陆海总里程</small></div>
+      <div class="stat"><b>1</b><small>跨海渡轮 FERRY</small></div>
+      <div class="stat"><b>¥3.5–5k</b><small>人均预算（含住）</small></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card" id="toc">
+    <h2><span class="em">🧭</span> 快速导航</h2>
+    <p class="sec-sub">本攻略全程不依赖飞机，所有交通可现场或线上购票，适合 1–2 人慢节奏自由行。</p>
+    <div class="toc">
+      <a href="#overview">路线总览<small>为什么这样走</small></a>
+      <a href="#itinerary">15 天行程<small>逐日时间线</small></a>
+      <a href="#ferry">巴厘海峡渡轮<small>核心环节</small></a>
+      <a href="#transport">交通票务<small>火车 / 巴士</small></a>
+      <a href="#budget">预算明细<small>人均参考</small></a>
+      <a href="#tips">实用贴士<small>签证 / 安全</small></a>
+    </div>
+  </section>
+
+  <section id="overview">
+    <h2><span class="em">🗺️</span> 路线总览：四段走法</h2>
+    <p class="sec-sub">爪哇岛的铁路网非常成熟，是这条线的主力；最后一段海峡靠 24 小时运行的国营渡轮 ASDP 衔接，无缝换乘。</p>
+    <div class="card">
+      <ul class="clean">
+        <li><b>第一段 · 西爪哇文化 </b>万隆 → 日惹（火车，约 7–8 小时）。穿过爪哇茶山与稻田，抵达爪哇文化心脏，看婆罗浮屠与普兰巴南。</li>
+        <li><b>第二段 · 中东爪哇过渡 </b>日惹 → 泗水（火车，约 4.5–5 小时），可顺道玛琅 / 布罗莫火山。</li>
+        <li><b>第三段 · 直插海峡口 </b>泗水 → 外南梦 Ketapang 港（火车，约 6–7 小时），途中可登伊真火山看蓝色火焰。</li>
+        <li><b>第四段 · 跨海登岛 </b>Ketapang ⛴ Gilimanuk 渡轮（约 1 小时）→ 巴士 / 包车经罗威那、乌布抵达登巴萨。</li>
+      </ul>
+      <div class="note sea" style="margin-top:16px">
+        <h4>⛴ 为什么不直飞？</h4>
+        这条线把交通本身变成体验：爪哇火车干净准点、风景极佳且便宜；巴厘海峡渡轮是印尼最繁忙的轮渡之一，站在甲板上看着巴厘岛轮廓浮现，是飞机给不了的「抵达感」。
+      </div>
+    </div>
+  </section>
+
+  <section id="itinerary">
+    <h2><span class="em">📅</span> 15 天逐日行程</h2>
+    <p class="sec-sub">节奏：约一半天数在路上 + 一半天数深度停留。火车多选白天班次看风景，长距离可选夜行车省一晚住宿。</p>
+
+    <div class="timeline">
+
+      <div class="day">
+        <div class="dot">1</div>
+        <div class="daycard">
+          <span class="where">万隆 BANDUNG</span>
+          <h3>抵达 + 适应高原山城</h3>
+          <ul>
+            <li>从雅加达可乘 <b>Whoosh 高铁</b>（约 45 分钟）或 Argo Parahyangan 火车（约 3 小时）到万隆。</li>
+            <li>逛 Braga 老街、Asia-Africa 大道殖民建筑，傍晚 Tangkuban Perahu 火山方向凉爽。</li>
+          </ul>
+          <span class="leg">🚄 雅加达→万隆 高铁/火车</span>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">2</div>
+        <div class="daycard">
+          <span class="where">万隆 BANDUNG</span>
+          <h3>火山与茶园一日</h3>
+          <ul>
+            <li>白天 Kawah Putih 白色火山湖、Ranca Upas 鹿园、茶园风光。</li>
+            <li>晚上回市区，提前在 KAI Access App 订好次日去日惹的火车票。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="dot">3</div>
+        <div class="daycard">
+          <span class="where">万隆 → 日惹 YOGYAKARTA</span>
+          <h3>翻越爪哇腹地的长途火车</h3>
+          <ul>
+            <li>乘 <b>Lodaya / Argo Wilis / Turangga</b> 等车次，从 Bandung 站到 Yogyakarta（Tugu）约 7–8 小时。</li>
+            <li>建议坐执行级（Eksekutif），沿途茶山、梯田、河谷极美。傍晚抵达，逛 Malioboro 大街。</li>
+          </ul>
+          <span class="leg">🚆 Bandung → Yogyakarta 7–8h</span>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">4</div>
+        <div class="daycard">
+          <span class="where">日惹 YOGYAKARTA</span>
+          <h3>婆罗浮屠日出</h3>
+          <ul>
+            <li>清晨包车 / 拼车去 <b>婆罗浮屠 Borobudur</b>（世界最大佛教遗址）看日出。</li>
+            <li>下午 Prambanan 印度教神庙群，傍晚有罗摩衍那舞剧。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">5</div>
+        <div class="daycard">
+          <span class="where">日惹 YOGYAKARTA</span>
+          <h3>苏丹王宫与街头艺术</h3>
+          <ul>
+            <li>Kraton 王宫、Taman Sari 水宫、Kotagede 银器村。</li>
+            <li>市内全靠 TransJogja 巴士 + Gojek/Grab 电单车，便宜方便。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="dot">6</div>
+        <div class="daycard">
+          <span class="where">日惹 → 泗水 SURABAYA</span>
+          <h3>转场东爪哇</h3>
+          <ul>
+            <li>乘 <b>Argo Wilis / Sancaka / Turangga</b> 到 Surabaya Gubeng，约 4.5–5 小时。</li>
+            <li>泗水是东爪哇枢纽，落脚 Gubeng 站附近，方便后续衔接。</li>
+          </ul>
+          <span class="leg">🚆 Yogyakarta → Surabaya 5h</span>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="dot">7</div>
+        <div class="daycard">
+          <span class="where">泗水 → 玛琅 MALANG</span>
+          <h3>前往布罗莫火山基地</h3>
+          <ul>
+            <li>短途火车 Surabaya → Malang 约 2–2.5 小时，玛琅气候凉爽、彩虹村可爱。</li>
+            <li>晚上预订次日凌晨 <b>布罗莫火山 Bromo</b> 吉普日出团。</li>
+          </ul>
+          <span class="leg">🚆 Surabaya → Malang 2.5h</span>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">8</div>
+        <div class="daycard">
+          <span class="where">布罗莫 BROMO</span>
+          <h3>火山日出（震撼亮点）</h3>
+          <ul>
+            <li>凌晨吉普车上 Penanjakan 观景台看 Bromo + Semeru 火山群日出，徒步到火山口。</li>
+            <li>下午返回玛琅 / 直接前往外南梦方向。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="dot">9</div>
+        <div class="daycard">
+          <span class="where">玛琅/泗水 → 外南梦 BANYUWANGI</span>
+          <h3>奔向爪哇最东端</h3>
+          <ul>
+            <li>乘 <b>Mutiara Timur / Probowangi / Ijen Ekspres</b> 火车到 <b>Banyuwangi / Ketapang 站</b>，约 6–7 小时。</li>
+            <li>住在 Ketapang 港附近，方便夜里出发爬伊真。</li>
+          </ul>
+          <span class="leg">🚆 → Banyuwangi 6–7h</span>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">10</div>
+        <div class="daycard">
+          <span class="where">伊真火山 IJEN</span>
+          <h3>蓝色火焰 + 硫磺湖</h3>
+          <ul>
+            <li>凌晨 1–2 点出发徒步登 <b>Ijen 伊真火山</b>，看世界罕见的蓝色火焰与酸性湖。</li>
+            <li>白天返回休整，傍晚到 Ketapang 港准备渡海。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day ferry">
+        <div class="dot">⛴</div>
+        <div class="daycard">
+          <span class="where">外南梦 ⛴ 巴厘岛 BALI</span>
+          <h3>跨越巴厘海峡（核心环节）</h3>
+          <ul>
+            <li>步行进 <b>Ketapang 港</b>，购 ASDP 渡轮票，<b>Ketapang → Gilimanuk</b> 渡轮约 1 小时（含进出港约 1.5–2 小时）。</li>
+            <li>登岛后注意：<b>巴厘岛比爪哇快 1 小时</b>（WIB→WITA）。Gilimanuk 换乘巴士。</li>
+          </ul>
+          <span class="leg ferry">⛴ Ketapang → Gilimanuk</span>
+          <span class="leg bus">🚌 Gilimanuk 上岸换乘</span>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">12</div>
+        <div class="daycard">
+          <span class="where">罗威那 LOVINA / 北巴厘</span>
+          <h3>慢下来的北岸</h3>
+          <ul>
+            <li>从 Gilimanuk 乘小巴沿北岸到 <b>Lovina 罗威那</b>，黑沙滩、清晨出海看海豚。</li>
+            <li>或加停 Munduk 山区瀑布、Twin Lakes 双子湖。</li>
+          </ul>
+          <span class="leg bus">🚌 Gilimanuk → Lovina</span>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="dot">13</div>
+        <div class="daycard">
+          <span class="where">罗威那 → 乌布 UBUD</span>
+          <h3>翻越中部山区进文化中心</h3>
+          <ul>
+            <li>经 Bedugul、Tegallalang 梯田到 <b>乌布 Ubud</b>。岛内用 Grab/Gojek 或包车最实际。</li>
+            <li>傍晚乌布皇宫看 Legong 舞蹈。</li>
+          </ul>
+          <span class="leg bus">🚐 Lovina → Ubud 包车/拼车</span>
+        </div>
+      </div>
+
+      <div class="day rest">
+        <div class="dot">14</div>
+        <div class="daycard">
+          <span class="where">乌布 UBUD</span>
+          <h3>梯田、神庙与稻田咖啡</h3>
+          <ul>
+            <li>圣猴森林、Tegallalang 梯田、Tirta Empul 圣泉庙。</li>
+            <li>傍晚出发或次日早上前往登巴萨。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="dot">15</div>
+        <div class="daycard">
+          <span class="where">乌布 → 登巴萨 DENPASAR</span>
+          <h3>抵达终点</h3>
+          <ul>
+            <li>乌布 → <b>登巴萨 Denpasar</b> 约 1.5 小时（Grab / Trans Metro Dewata 公交 / 包车）。</li>
+            <li>逛 Bajra Sandhi 纪念碑、Sanur 海滩收尾，旅程在此画上句号 🎉。</li>
+          </ul>
+          <span class="leg bus">🚌 Ubud → Denpasar 1.5h</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="ferry">
+    <h2><span class="em">⛴️</span> 巴厘海峡渡轮全解</h2>
+    <p class="sec-sub">Ketapang（外南梦）↔ Gilimanuk（巴厘）是全程唯一、也是最有仪式感的跨海环节。</p>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0">🎫 怎么坐</h4>
+        <ul class="clean">
+          <li><b>运营方</b> 国营 ASDP Indonesia Ferry，24 小时不间断发船。</li>
+          <li><b>班次</b> 高峰期约每 30–60 分钟一班，几乎随到随走。</li>
+          <li><b>航程</b> 海上约 45–60 分钟，含排队进出港预留 1.5–2 小时。</li>
+          <li><b>购票</b> 须实名，用 <b>Ferizy App / 官网</b> 提前订步行票（pejalan kaki），现场扫码进闸。</li>
+          <li><b>船票</b> 步行客约 Rp 10,000 上下，极便宜。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">🧭 上下岛衔接</h4>
+        <ul class="clean">
+          <li><b>到港步行</b> Banyuwangi/Ketapang 火车站紧邻港口，下火车步行即可进港。</li>
+          <li><b>登岛后</b> Gilimanuk 港外有 Terminal，发往 Denpasar(Ubung)、Lovina、Singaraja 的巴士/小巴。</li>
+          <li><b>时差</b> 一上岛把手表 <b>+1 小时</b>（WIB→WITA），别误了后续车。</li>
+          <li><b>替代</b> 也可在火车站买含船票的「火车+渡轮」联程，省去单独排队。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:16px">
+      <h4>⚠️ 渡轮注意</h4>
+      旺季（7–8 月、年末、印尼节假日）港口可能排长队，务必 <b>提前一天在 Ferizy 上购票并选好时段</b>；夜间班次照常运行但接驳车较少，尽量安排白天过海。
+    </div>
+  </section>
+
+  <section id="transport">
+    <h2><span class="em">🚆</span> 交通与票务速查</h2>
+    <p class="sec-sub">爪哇段以国营铁路 KAI 为主，全部可在 <b>Access by KAI</b> App 提前购票、对号入座。</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>区间</th><th>方式</th><th>参考时长</th><th>参考票价 (IDR)</th><th>建议</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>雅加达 → 万隆</td><td>Whoosh 高铁 / 火车</td><td>0.75–3 h</td><td class="num">150k–350k</td><td>高铁最快</td></tr>
+          <tr><td>万隆 → 日惹</td><td>KAI 火车</td><td>7–8 h</td><td class="num">200k–400k</td><td>选白天执行级看风景</td></tr>
+          <tr><td>日惹 → 泗水</td><td>KAI 火车</td><td>4.5–5 h</td><td class="num">200k–350k</td><td>Argo Wilis 推荐</td></tr>
+          <tr><td>泗水 → 玛琅</td><td>KAI 火车</td><td>2–2.5 h</td><td class="num">10k–150k</td><td>本地通勤车很便宜</td></tr>
+          <tr><td>玛琅/泗水 → 外南梦</td><td>KAI 火车</td><td>6–7 h</td><td class="num">100k–300k</td><td>终点 Ketapang 紧邻港口</td></tr>
+          <tr><td>Ketapang → Gilimanuk</td><td>ASDP 渡轮</td><td>1 h</td><td class="num">~10k（步行客）</td><td>Ferizy App 购票</td></tr>
+          <tr><td>Gilimanuk → 罗威那/乌布</td><td>小巴 / 包车</td><td>2–3 h</td><td class="num">50k–500k</td><td>包车更省心</td></tr>
+          <tr><td>乌布 → 登巴萨</td><td>Grab / 公交</td><td>1–1.5 h</td><td class="num">50k–200k</td><td>Grab 最方便</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="note">
+        <h4>📱 必备 App</h4>
+        <div class="chips">
+          <span>Access by KAI（火车）</span><span>Ferizy（渡轮）</span><span>Gojek / Grab（打车）</span><span>Google Maps</span><span>Wise / 现金 IDR</span>
+        </div>
+      </div>
+      <div class="note sea">
+        <h4>🎟 车厢等级</h4>
+        Ekonomi（经济）→ Bisnis（商务）→ Eksekutif（执行）。长途强烈推荐执行级，座椅宽、有空调、可调靠背，价差不大体验差很多。
+      </div>
+    </div>
+  </section>
+
+  <section id="budget">
+    <h2><span class="em">💰</span> 预算明细（人均 · 中档）</h2>
+    <p class="sec-sub">以 1 人 15 天、住经济型民宿 / 三星、吃当地餐 + 偶尔下馆子估算，汇率约 1 元 ≈ 2,100 IDR。</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>项目</th><th>说明</th><th>预算 (IDR)</th><th>约合人民币</th></tr></thead>
+        <tbody>
+          <tr><td>城际火车 ×5 段</td><td>含部分执行级</td><td class="num">1,200,000</td><td class="num">¥570</td></tr>
+          <tr><td>渡轮 + 岛内交通</td><td>渡轮 + 巴士 + Grab</td><td class="num">800,000</td><td class="num">¥380</td></tr>
+          <tr><td>住宿 ×14 晚</td><td>¥120–180/晚</td><td class="num">4,200,000</td><td class="num">¥2,000</td></tr>
+          <tr><td>餐饮 15 天</td><td>三餐 + 咖啡</td><td class="num">2,250,000</td><td class="num">¥1,070</td></tr>
+          <tr><td>门票 / 一日团</td><td>婆罗浮屠·布罗莫·伊真等</td><td class="num">1,500,000</td><td class="num">¥710</td></tr>
+          <tr><td>杂项 / 应急</td><td>SIM 卡·小费·购物</td><td class="num">700,000</td><td class="num">¥330</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">合计（人均）</td><td class="num">≈ 10,650,000</td><td class="num">≈ ¥5,060</td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <h4>💡 省钱思路</h4>
+      选夜行火车省住宿、住青旅、吃 warung 路边餐、火山团多人拼车，整体可压到 <b>人均 ¥3,500 左右</b>；不含国际往返机票。
+    </div>
+  </section>
+
+  <section id="tips">
+    <h2><span class="em">🧳</span> 实用贴士</h2>
+    <div class="grid2">
+      <div class="card">
+        <h4 style="margin-top:0">🛂 签证 / 入境</h4>
+        <ul class="clean">
+          <li>中国护照可办 <b>落地签 VOA</b> 或电子落地签 e-VOA（约 Rp 500k，停留 30 天可续）。</li>
+          <li>需有效期 6 个月以上护照 + 离境行程。</li>
+          <li>提前在线填 <b>SATUSEHAT / 海关申报</b>（Customs Declaration）。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">🌦 时间 / 天气</h4>
+        <ul class="clean">
+          <li><b>旱季 4–10 月</b>最佳，火山日出云海概率高。</li>
+          <li>爪哇 WIB、巴厘 WITA，<b>过海 +1 小时</b>。</li>
+          <li>火山凌晨极冷，备抓绒 + 防风外套。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">💳 钱 / 网络</h4>
+        <ul class="clean">
+          <li>落地买 <b>Telkomsel / XL</b> 电话卡，信号最好。</li>
+          <li>大城市可刷卡，<b>火山区 / 港口 / warung 备现金</b>。</li>
+          <li>ATM 取现认 Bersama / Prima 网络。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-top:0">🦺 安全 / 礼仪</h4>
+        <ul class="clean">
+          <li>火车站、Malioboro 等人多处看好财物。</li>
+          <li>进神庙穿 <b>纱笼（sarong）</b>、肩膝遮盖。</li>
+          <li>火山徒步戴口罩防硫磺，听从向导。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>🌋 万隆 → 登巴萨 · 15 天爪哇陆海慢游攻略 ⛴️<br>
+  <span class="badge">仅供参考</span> 票价 / 时刻随季节浮动，出行前请以 KAI、Ferizy 官方 App 实时信息为准。</p>
+</footer>
+
+</body>
+</html>
