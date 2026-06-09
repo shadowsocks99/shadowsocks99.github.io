@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>庞越火山田野调查报告</title>
+<style>
+@page {
+  size: A4;
+  margin: 22mm 18mm 24mm 18mm;
+  background: url('assets/paper.jpg');
+  background-size: cover;
+  @bottom-center {
+    content: "— " counter(page) " —";
+    font-family: 'WenQuanYi Zen Hei';
+    font-size: 9pt;
+    color: #7a5a36;
+  }
+}
+@page cover { margin: 0; background: #2b1d14; }
+
+* { box-sizing: border-box; }
+body {
+  font-family: 'WenQuanYi Zen Hei', sans-serif;
+  color: #3d2b1a;
+  font-size: 10.5pt;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ---------- cover ---------- */
+.cover { page: cover; width: 210mm; height: 297mm; position: relative; }
+.cover img.bg { width: 210mm; height: 297mm; object-fit: cover; }
+.cover .frame {
+  position: absolute; top: 8mm; left: 8mm; right: 8mm; bottom: 8mm;
+  border: 1.6mm double #c9a35c;
+  outline: 0.5mm solid #6e4a22;
+}
+.cover .plaque {
+  position: absolute; left: 24mm; right: 24mm; top: 178mm;
+  background: rgba(43, 28, 15, 0.72);
+  border: 0.8mm double #c9a35c;
+  padding: 9mm 10mm 8mm;
+  text-align: center;
+}
+.cover h1 {
+  margin: 0; font-size: 27pt; letter-spacing: 8pt;
+  color: #f3e3bc; font-weight: bold;
+}
+.cover h2 {
+  margin: 4mm 0 0; font-size: 12.5pt; letter-spacing: 4pt;
+  color: #e0c188; font-weight: normal;
+}
+.cover .rule {
+  width: 52mm; height: 0.5mm; background: #c9a35c;
+  margin: 5mm auto 4mm;
+}
+.cover .meta {
+  margin: 1mm 0 0; font-size: 9.5pt; color: #d8c49a; letter-spacing: 2pt;
+}
+.cover .motto {
+  position: absolute; left: 0; right: 0; top: 252mm; text-align: center;
+  color: #e8d5a8; font-size: 9.5pt; letter-spacing: 3pt;
+}
+
+/* ---------- typography ---------- */
+h2.sec {
+  font-size: 16pt; color: #5a3414; letter-spacing: 3pt;
+  border-bottom: 0.6mm double #a8763e;
+  padding-bottom: 2mm; margin: 9mm 0 4mm;
+}
+h2.sec .num { color: #a8763e; margin-right: 4mm; }
+h3 { font-size: 11.5pt; color: #6e4a22; letter-spacing: 1.5pt; margin: 5mm 0 1.5mm; }
+p { margin: 2.2mm 0; text-align: justify; }
+p.first::first-letter {
+  font-size: 17pt; color: #8a5a24; font-weight: bold;
+}
+.divider { text-align: center; color: #a8763e; font-size: 13pt; margin: 5mm 0; letter-spacing: 6pt; }
+
+/* ---------- figures ---------- */
+figure { margin: 5mm 0; text-align: center; page-break-inside: avoid; }
+figure img {
+  width: 100%;
+  border: 2mm solid #f6efdd;
+  outline: 1.4mm double #8a5a24;
+  box-shadow: 0 2mm 4mm rgba(60,40,20,.45);
+}
+figcaption {
+  font-size: 8.8pt; color: #7a5a36; margin-top: 2.5mm; letter-spacing: 1pt;
+}
+
+/* ---------- tables ---------- */
+table {
+  width: 100%; border-collapse: collapse; margin: 4mm 0;
+  font-size: 9.3pt; page-break-inside: avoid;
+}
+th {
+  background: rgba(138, 90, 36, 0.16); color: #5a3414;
+  border: 0.35mm solid #a8763e; padding: 1.6mm 2.2mm; letter-spacing: 1pt;
+}
+td { border: 0.3mm solid #b08c5a; padding: 1.5mm 2.2mm; }
+tr:nth-child(even) td { background: rgba(168, 118, 62, 0.07); }
+
+/* ---------- boxes ---------- */
+.note {
+  border: 0.45mm solid #a8763e; border-left: 2.2mm solid #a8763e;
+  background: rgba(201, 163, 92, 0.13);
+  padding: 3mm 4.5mm; margin: 4mm 0; font-size: 9.6pt;
+}
+.note b { color: #5a3414; }
+.abstract {
+  border: 0.6mm double #8a5a24; padding: 4.5mm 6mm; margin: 5mm 0;
+  background: rgba(246, 239, 221, 0.55); font-size: 10pt;
+}
+.abstract .ttl {
+  text-align: center; font-size: 12pt; letter-spacing: 6pt;
+  color: #5a3414; font-weight: bold; margin-bottom: 2mm;
+}
+.kw { font-size: 9.3pt; color: #6e4a22; margin-top: 2.5mm; }
+.pagebreak { page-break-before: always; }
+ul { margin: 2mm 0; padding-left: 7mm; }
+li { margin: 1.2mm 0; }
+.sig { margin-top: 8mm; text-align: right; color: #5a3414; letter-spacing: 1pt; }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <img class="bg" src="assets/cover_portrait.jpg" alt="">
+  <div class="frame"></div>
+  <div class="plaque">
+    <h1>庞越火山田野调查报告</h1>
+    <h2>布罗莫 — 腾格尔 — 塞梅鲁火山群综合考察</h2>
+    <div class="rule"></div>
+    <div class="meta">印度尼西亚 · 东爪哇省 · 庞越（Probolinggo）</div>
+    <div class="meta">火山地质与人文环境联合考察组 · 二〇二六年六月</div>
+  </div>
+  <div class="motto">众神之沙海 · 不眠之火口</div>
+</div>
+
+<!-- ================= ABSTRACT ================= -->
+<div class="pagebreak"></div>
+<div class="abstract">
+  <div class="ttl">摘　要</div>
+  <p>本报告基于考察组于二〇二六年五月十八日至二十四日在印度尼西亚东爪哇省庞越（Probolinggo）地区开展的为期七天的田野调查。调查范围涵盖腾格尔（Tengger）破火山口及其内部的布罗莫（Bromo）活动火山锥、腾格尔沙海（Laut Pasir），以及火山口缘的山地村落塞莫罗拉旺（Cemoro Lawang）。考察组沿"海岸平原—山地村落—破火山口—活动火口"的剖面线，对区域地质构造、火山活动迹象、地貌形态、灾害风险与腾格尔人的生计方式进行了观察与记录，并就火山旅游与防灾管理提出初步建议。</p>
+  <p class="kw"><b>关键词：</b>庞越　布罗莫火山　腾格尔破火山口　沙海　田野调查　火山灾害　腾格尔人</p>
+</div>
+
+<table>
+  <tr><th style="width:24%">项　目</th><th>内　容</th></tr>
+  <tr><td>调查时间</td><td>2026 年 5 月 18 日 — 5 月 24 日（共 7 日）</td></tr>
+  <tr><td>调查区域</td><td>东爪哇省庞越市及庞越县苏卡普拉（Sukapura）一带，腾格尔破火山口内外</td></tr>
+  <tr><td>调查对象</td><td>布罗莫火山及腾格尔火山群、沙海地貌、火山监测设施、腾格尔人村落</td></tr>
+  <tr><td>调查方法</td><td>路线踏勘、定点观测、访谈记录、写生与摄影、文献比对</td></tr>
+  <tr><td>队伍构成</td><td>火山地质组 3 人，人文地理组 2 人，向导及后勤 2 人</td></tr>
+</table>
+
+<!-- ================= SECTION 1 ================= -->
+<h2 class="sec"><span class="num">壹</span>调查区域概况</h2>
+<p class="first">庞越（Probolinggo，旧译"普罗博林戈"）位于印度尼西亚东爪哇省北岸，北临马都拉海峡，南倚腾格尔火山高地。当地素以"风、葡萄与芒果之城"自况：旱季自山地灌下的"根丁风"（Angin Gending）干燥强劲，沿海平原则盛产芒果与葡萄。城市本身是爪哇北岸传统的港口与农产集散地，而其腹地——庞越县的山区——正是本次调查的主角：腾格尔火山群。</p>
+<p>自海岸向南，地势在数十公里内由海平面急升至两千余米。我们的调查路线由庞越市出发，经通萨斯（Tongas）与苏卡普拉山道盘旋而上，至火山口缘村落塞莫罗拉旺（Cemoro Lawang，海拔约 2,200 米）设立营地，再下行进入破火山口内部。沿途植被由滨海椰林、旱作田园渐变为山地菜园与木麻黄疏林，垂直分带清晰，是一条理想的自然地理剖面。</p>
+<p>布罗莫—腾格尔—塞梅鲁一带于 1982 年划设为国家公园；其中的沙海早在 1919 年即被殖民时期当局列为保护地，是印尼最早受保护的自然景观之一。</p>
+
+<!-- ================= SECTION 2 ================= -->
+<h2 class="sec"><span class="num">贰</span>地质背景与火山活动史</h2>
+<p class="first">腾格尔火山群属巽他岛弧的一部分，系印度—澳大利亚板块向欧亚板块俯冲的产物。该区火山活动历史悠久，古腾格尔火山的喷发记录可上溯至约八十二万年前。古火山经多期猛烈喷发与塌陷，形成今日直径约十公里、近于圆形的腾格尔破火山口；口内平铺火山灰与火山砂，即著名的"沙海"。</p>
+<p>破火山口内发育五座后生火山锥：布罗莫（Bromo，2,329 米）、巴托克（Batok，约 2,440 米）、库尔西（Kursi）、瓦塘安（Watangan）与维多达连（Widodaren）。其中唯有布罗莫至今活动频繁——其名源自梵语"梵天"（Brahma），自十九世纪初有记录以来喷发逾五十次，为爪哇岛最活跃的火山之一。破火山口以南约二十公里处，耸立着爪哇最高峰塞梅鲁火山（Semeru，3,676 米），常年间歇性喷烟，与布罗莫遥相呼应。</p>
+<h3>近期主要活动记录</h3>
+<table>
+  <tr><th style="width:18%">年份</th><th>活动概况</th></tr>
+  <tr><td>2004</td><td>突发性爆炸式喷发，火口附近落石致 2 名游客罹难，引发对游览安全距离的检讨</td></tr>
+  <tr><td>2010 — 2011</td><td>持续性灰喷发，火山灰影响周边县市并一度干扰区域航空运输</td></tr>
+  <tr><td>2015 — 2016</td><td>长时间喷灰与火山震颤，警戒级别多次上调，沙海局部封闭</td></tr>
+  <tr><td>2019</td><td>间歇性喷发与灰柱，火口周边设 1 公里禁入区</td></tr>
+</table>
+<p>本次调查期间，布罗莫处于低强度喷气状态：火口持续释放白色蒸汽，偶夹淡硫味，未见喷灰。考察组在沙海北缘记录到轻微的地面震颤感两次，均与监测站公布的浅源火山性地震时段吻合。</p>
+
+<!-- ================= SECTION 3 ================= -->
+<div class="pagebreak"></div>
+<h2 class="sec"><span class="num">叁</span>地貌观察：腾格尔沙海</h2>
+<figure>
+  <img src="assets/sandsea.jpg" alt="沙海">
+  <figcaption>图一 · 腾格尔沙海（Laut Pasir）：考察队员徒步横越火山灰平原，远处为破火山口内壁　（考察组油画写生）</figcaption>
+</figure>
+<p class="first">沙海是本区最具特色的地貌单元：一片近乎水平的火山碎屑平原，环抱诸火山锥，当地人称之为"Segara Wedi"（爪哇语"沙之海"）。其物质主要为布罗莫历次喷发降落的火山灰、火山砂与火山砾，经雨季流水的再搬运而趋于平整。地表广布风成波痕与车辙状冲沟，旱季尘暴时能见度可骤降至数十米。</p>
+<p>我们沿沙海北缘布设了三处观察点，记录到如下现象：</p>
+<ul>
+  <li>灰层剖面可辨多期降灰旋回，新鲜灰层疏松、色深，踩踏即陷数厘米；</li>
+  <li>破火山口内壁坡度普遍逾三十度，雨季冲沟发育，崩积裙叠覆于沙海边缘；</li>
+  <li>沙海植被极度稀疏，仅洼地见莎草与禾草斑块，向口壁过渡为山地灌丛；</li>
+  <li>清晨逆温显著，谷内气温较口缘低 3 — 5 ℃，雾气沿沙海面漂移，蔚为壮观。</li>
+</ul>
+<div class="note"><b>观察手记：</b>五月二十日黎明，自佩南贾坎（Penanjakan，约 2,770 米）观景山远眺，云海灌满破火山口，巴托克与布罗莫双锥浮出其上，喷气柱被初阳染作金红——此景正是本报告封面油画之所本。</div>
+
+<!-- ================= SECTION 4 ================= -->
+<h2 class="sec"><span class="num">肆</span>火山口近距观测</h2>
+<figure>
+  <img src="assets/crater.jpg" alt="火山口">
+  <figcaption>图二 · 布罗莫火口俯瞰：口壁辐射状冲沟与硫华斑块，中央蒸汽柱不息　（考察组油画写生）</figcaption>
+</figure>
+<p class="first">五月二十一日上午，经监测部门确认警戒级别处于低位后，考察组沿西北侧阶梯登上布罗莫火口缘。火口呈漏斗状，缘部直径约八百米，内壁陡峻，发育密集的辐射状冲沟；近底部见黄白色硫华沿裂隙呈环带分布。火口中央持续上升白色蒸汽柱，伴有低沉的间歇性轰鸣，俯身可感热气拂面，硫化氢气味明显。</p>
+<table>
+  <tr><th>观测项目</th><th>记录值 / 描述</th></tr>
+  <tr><td>火口缘海拔（手持 GPS）</td><td>约 2,320 — 2,330 米</td></tr>
+  <tr><td>喷气柱高度（目估）</td><td>约 150 — 400 米，随风向摆动</td></tr>
+  <tr><td>喷气颜色与气味</td><td>白色为主，偶呈灰白；硫味轻至中等</td></tr>
+  <tr><td>声响</td><td>持续嘶鸣夹间歇低鸣，约数分钟一次</td></tr>
+  <tr><td>口缘游客密度（上午八时）</td><td>每百米栈道约 20 — 40 人，集中于阶梯顶端</td></tr>
+</table>
+<p>值得注意的是，口缘仅一侧设有护栏，且警示标识多为印尼文与英文。结合 2004 年伤亡教训，建议增设多语种警示与应急避险指示。</p>
+
+<!-- ================= SECTION 5 ================= -->
+<div class="pagebreak"></div>
+<h2 class="sec"><span class="num">伍</span>灾害监测与风险评估</h2>
+<p class="first">布罗莫由印尼火山与地质灾害减灾中心（PVMBG）下属的火山观测站全天候监测，手段包括地震计网络、形变测量、可视监控与气体观测。印尼现行火山警戒分四级：一级"正常"（Normal）、二级"留意"（Waspada）、三级"戒备"（Siaga）、四级"危险"（Awas）；调查期间布罗莫维持低警戒级别，火口周边建议安全半径为一公里。</p>
+<p>综合本次踏勘，主要灾害风险可归纳为：</p>
+<ul>
+  <li><b>突发爆炸式喷发与弹道落石</b>——对火口缘游客威胁最直接，历史上已有伤亡；</li>
+  <li><b>降灰</b>——影响下风向村落与农作物，并可能波及泗水方向的航空运输；</li>
+  <li><b>火山泥流（Lahar）</b>——雨季沿庞越一侧河谷下泄，威胁山麓聚落与道路；</li>
+  <li><b>有害气体与尘暴</b>——沙海内对哮喘等敏感人群构成健康风险。</li>
+</ul>
+<div class="note"><b>风险提示：</b>沙海地形封闭、撤离通道有限，旺季单日入区车辆动辄数百台。一旦警戒升级，瓶颈路段（沙海—口缘阶梯、塞莫罗拉旺陡坡道）极易拥塞，应预先制定分级疏散预案。</div>
+
+<!-- ================= SECTION 6 ================= -->
+<h2 class="sec"><span class="num">陆</span>人文与生计：腾格尔人的高地世界</h2>
+<p class="first">环破火山口而居的腾格尔人（Tengger）约有十万之众，是爪哇岛上少数至今信奉印度教的族群，自认满者伯夷王朝遗民之后。他们视布罗莫为圣山：每年卡萨达祭典（Yadnya Kasada）时，村民列队穿越沙海，登上火口缘，将蔬果、家禽乃至牲畜投入火口，献祭山神，祈求丰收平安。沙海中央的波坦圣庙（Pura Luhur Poten）是祭典的起点，黑色火山岩砌成的庙身与灰色沙海浑然一体。</p>
+<figure>
+  <img src="assets/village.jpg" alt="腾格尔村落与农田">
+  <figcaption>图三 · 口缘村落与高地菜园：红顶农舍点缀于葱田与马铃薯田之间，远处火山喷烟可见　（考察组油画写生）</figcaption>
+</figure>
+<p>腾格尔人的生计高度依赖火山的馈赠。火山灰风化而成的肥沃土壤，使海拔两千米以上的坡地得以精耕：马铃薯、卷心菜与大葱是三大主栽作物，田块沿陡坡层层叠升，几无闲地。近数十年旅游业兴起，吉普车接驳、马匹租赁与民宿经营成为重要副业；访谈中多位村民表示，"火山喷发时游客绝迹，菜价便是全家的指望"——火山既是风险之源，亦是生计之本，这种双重性构成当地人地关系的核心。</p>
+
+<!-- ================= SECTION 7 ================= -->
+<h2 class="sec"><span class="num">柒</span>结论与建议</h2>
+<p class="first">庞越腹地的布罗莫—腾格尔火山区，是自然过程与人类活动高度耦合的典型样区：破火山口、活动火口与沙海构成完整而紧凑的火山地貌博物馆；腾格尔人的信仰、农耕与旅游经济，则与火山活动节律深度交织。基于本次调查，提出如下建议：</p>
+<ul>
+  <li>在火口缘与沙海主要入口增设多语种警示与实时警戒级别显示屏；</li>
+  <li>编制旺季分级疏散预案，演练沙海—口缘瓶颈路段的应急管控；</li>
+  <li>扶持社区参与式旅游，使防灾培训与导览认证挂钩，提高村民应急能力；</li>
+  <li>建立降灰对高地蔬菜产量影响的长期观测样地，为灾后补偿提供依据；</li>
+  <li>后续考察宜增加雨季航次，补充火山泥流通道与冲沟演变的对比观测。</li>
+</ul>
+<div class="divider">❦　❦　❦</div>
+
+<!-- ================= APPENDIX ================= -->
+<h2 class="sec"><span class="num">附</span>调查日志摘要</h2>
+<table>
+  <tr><th style="width:16%">日期</th><th style="width:30%">行程</th><th>主要工作</th></tr>
+  <tr><td>5 月 18 日</td><td>庞越市 — 苏卡普拉</td><td>海岸平原与山麓带踏勘，访问县属农业站</td></tr>
+  <tr><td>5 月 19 日</td><td>塞莫罗拉旺</td><td>口缘营地设立，村落访谈与民宿经济调查</td></tr>
+  <tr><td>5 月 20 日</td><td>佩南贾坎 — 沙海北缘</td><td>黎明云海观测，沙海剖面与灰层记录，油画写生</td></tr>
+  <tr><td>5 月 21 日</td><td>布罗莫火口缘</td><td>火口近距观测，喷气与声响记录，游客密度统计</td></tr>
+  <tr><td>5 月 22 日</td><td>沙海南部 — 波坦圣庙</td><td>圣庙建筑记录，卡萨达祭典口述史访谈</td></tr>
+  <tr><td>5 月 23 日</td><td>口缘东侧菜园带</td><td>高地农业样方调查，土壤与作物记录</td></tr>
+  <tr><td>5 月 24 日</td><td>下撤庞越市</td><td>资料整理，与火山观测站交流监测数据</td></tr>
+</table>
+<p class="sig">火山地质与人文环境联合考察组　谨识<br>二〇二六年六月 · 庞越</p>
+
+</body>
+</html>
